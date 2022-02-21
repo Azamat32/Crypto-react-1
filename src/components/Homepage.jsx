@@ -4,7 +4,7 @@ import {Link}   from 'react-router-dom'
 import { useGetCryptosQuery } from '../services/cryptoApi'
 import milify from 'millify'
 import {Cryptocurrencies ,News} from '../components'
-
+import Loader from './Loader'
 
 
 
@@ -15,7 +15,7 @@ function Homepage() {
   console.log(data)
   const globalStats = data?.data?.stats;
 
-  if (isFetching) return 'Loading...';
+  if (isFetching) return <Loader/>;
 
 
   return (
